@@ -1,0 +1,23 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Subscription'
+    azureResourceManagerConnection: 'armsvconn'
+    subscriptionId: '0fc5968b-18e8-4ab8-b214-fc62b58951d9'
+    location: 'Central India'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/silvestersunny/ARM/main/resourcegroup/template.json'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPiplineTemplate'
+
