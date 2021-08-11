@@ -7,10 +7,6 @@
         },
         "rgLocation": {
             "type": "string"
-        },
-        "tags": {
-            "type": "object",
-            "defaultValue": {}
         }
     },
     "variables": {},
@@ -21,7 +17,7 @@
             "location": "[parameters('rgLocation')]",
             "name": "[parameters('rgName')]",
             "properties": {},
-            "tags": "[parameters('tags')]"
+            "tags": ""
         }
     ],
     "outputs": {}
