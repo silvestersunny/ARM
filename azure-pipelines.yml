@@ -18,6 +18,5 @@ steps:
     location: 'Central India'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/silvestersunny/ARM/main/resourcegroup/template.json'
-    overrideParameters: '-rgName Dev-rg-01 -rgLocation "Central India"'
     deploymentMode: 'Incremental'
 
