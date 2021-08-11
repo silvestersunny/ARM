@@ -1,13 +1,4 @@
 # Starter pipeline
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Subscription'
-    azureResourceManagerConnection: 'ARMSVCon'
-    subscriptionId: '0fc5968b-18e8-4ab8-b214-fc62b58951d9'
-    location: 'Central India'
-    templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/silvestersunny/ARM/main/resourcegroup/template.json'
-    deploymentMode: 'Incremental'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -23,6 +14,15 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Subscription'
+    azureResourceManagerConnection: 'ARMSVCon'
+    subscriptionId: '0fc5968b-18e8-4ab8-b214-fc62b58951d9'
+    location: 'Central India'
+    templateLocation: 'Linked artifact'
+    csmFile: 'https://raw.githubusercontent.com/silvestersunny/ARM/main/resourcegroup/template.json'
+    deploymentMode: 'Incremental'
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
